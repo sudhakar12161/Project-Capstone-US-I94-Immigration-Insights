@@ -1,0 +1,321 @@
+{
+	"tables": [{
+			"table": "airports_codes_dim",
+			"table_description": "The DIM table in the star schema and it has info about Airports",
+			"fields": [{
+					"field_name": "identification",
+					"field_description": "code of the Airport"
+				},
+				{
+					"field_name": "name",
+					"field_description": "Name of the Airport"
+				},
+				{
+					"field_name": "type",
+					"field_description": "type of the airport"
+				},
+				{
+					"field_name": "continent",
+					"field_description": "continent of the airport located in"
+				},
+				{
+					"field_name": "country",
+					"field_description": "Airport country"
+				},
+				{
+					"field_name": "city",
+					"field_description": "airport city"
+				},
+				{
+					"field_name": "municipality",
+					"field_description": "municipality of the airport"
+				}
+			]
+		},
+		{
+			"table": "us_city_demographic_dim",
+			"table_description": "This is one of the DIm table in Start schema and it has the info about US cities like popualtion and other info",
+			"fields": [{
+					"field_name": "id",
+					"field_description": "sequence number"
+				},
+				{
+					"field_name": "state",
+					"field_description": "state name in the US"
+				},
+				{
+					"field_name": "city",
+					"field_description": "city name"
+				},
+				{
+					"field_name": "record_timestamp",
+					"field_description": "datetimstamp that the record captured"
+				},
+				{
+					"field_name": "total_population",
+					"field_description": "Total pupulation of the city"
+				},
+				{
+					"field_name": "male_population",
+					"field_description": "Total male popualtion in that city"
+				},
+				{
+					"field_name": "female_population",
+					"field_description": "Female popualtion"
+				},
+				{
+					"field_name": "count",
+					"field_description": "count"
+				},
+				{
+					"field_name": "median_age",
+					"field_description": "Average age of the people"
+				},
+				{
+					"field_name": "average_household_size",
+					"field_description": "avaage house hold size"
+				},
+				{
+					"field_name": "race",
+					"field_description": "race"
+				},
+				{
+					"field_name": "foreign_born",
+					"field_description": "count of foreign born"
+				},
+				{
+					"field_name": "number_of_veterans",
+					"field_description": "number_of_veterans in that city"
+				}
+			]
+		},
+		{
+			"table": "194_port_dim",
+			"table_description": "This DIM will have the info of the passagner landed in",
+			"fields": [{
+					"field_name": "port_code",
+					"field_description": "3 letter airport code"
+				},
+				{
+					"field_name": "state",
+					"field_description": "State of the airport located in"
+				},
+				{
+					"field_name": "city",
+					"field_description": "city of the airport located in"
+				}
+			]
+		},
+		{
+			"table": "194_entry_mode_dim",
+			"table_description": "Extracted info from I94_SAS_Labels_Descriptions.SAS file. it has the info of travel modes like Air..",
+			"fields": [{
+					"field_name": "entry_code",
+					"field_description": "code for the entrt mode"
+				},
+				{
+					"field_name": "entry_desc",
+					"field_description": "description for the mode of entry"
+				}
+			]
+		},
+		{
+			"table": "194_address_dim",
+			"table_description": "Extracted info from I94_SAS_Labels_Descriptions.SAS file. this is the information of the passagner travelled to",
+			"fields": [{
+					"field_name": "state_code",
+					"field_description": "code of the State in two char form"
+				},
+				{
+					"field_name": "state",
+					"field_description": "description of the state"
+				}
+			]
+		},
+		{
+			"table": "194_visa_dim",
+			"table_description": "Extracted info from I94_SAS_Labels_Descriptions.SAS file. this will have Type of visa info",
+			"fields": [{
+					"field_name": "visa_code",
+					"field_description": "visa code in number format"
+				},
+				{
+					"field_name": "visa_desc",
+					"field_description": "Description of the visa"
+				}
+			]
+		},
+		{
+			"table": "194_cit_res_dim",
+			"table_description": "Extracted info from I94_SAS_Labels_Descriptions.SAS file. the Flight origin code and the name of the country",
+			"fields": [{
+					"field_name": "code",
+					"field_description": "Country code in number format"
+				},
+				{
+					"field_name": "country",
+					"field_description": "Name of the Country"
+				}
+			]
+		},
+		{
+			"table": "date_dim",
+			"table_description": "This is one of the DIM table and it has generic date info and the grain is one row per date",
+			"fields": [{
+					"field_name": "date",
+					"field_description": "date with yyyy/mm/dd"
+				},
+				{
+					"field_name": "day",
+					"field_description": "day of the month"
+				},
+				{
+					"field_name": "month",
+					"field_description": "month"
+				},
+				{
+					"field_name": "year",
+					"field_description": "year"
+				},
+				{
+					"field_name": "day_of_week",
+					"field_description": "day of the week"
+				},
+				{
+					"field_name": "week_of_year",
+					"field_description": "week of the year"
+				}
+			]
+		},
+		{
+			"table": "global_weather_dim",
+			"table_description": "One of the DIM table and it has Daily Average Global weather information. The grain of the table is one record per day per country per city",
+			"fields": [{
+					"field_name": "id",
+					"field_description": "Sequence column"
+				},
+				{
+					"field_name": "date",
+					"field_description": "Date for the day temperature recorded"
+				},
+				{
+					"field_name": "city",
+					"field_description": "Temperature of the City"
+				},
+				{
+					"field_name": "country",
+					"field_description": "Country information"
+				},
+				{
+					"field_name": "average_temperature",
+					"field_description": "Average temperature of the city"
+				},
+				{
+					"field_name": "average_temperature_uncertain",
+					"field_description": "Average temperature of the city"
+				},
+				{
+					"field_name": "latitude",
+					"field_description": "location coordinate"
+				},
+				{
+					"field_name": "longitude",
+					"field_description": "location coordinate"
+				}
+			]
+		},
+		{
+			"table": "194_immigration_fact",
+			"table_description": "This is the FACT table in the star schema. It has all the info of a passager like from where he is comeing and where he is going..",
+			"fields": [{
+					"field_name": "admission_number",
+					"field_description": "I94 number"
+				},
+				{
+					"field_name": "year",
+					"field_description": "Year the passanger travelled"
+				},
+				{
+					"field_name": "month",
+					"field_description": "month of the passager travelled"
+				},
+				{
+					"field_name": "from_city",
+					"field_description": "code of the city passager coming from"
+				},
+				{
+					"field_name": "from_res",
+					"field_description": "code of the city passager coming from"
+				},
+				{
+					"field_name": "port",
+					"field_description": "Port of entry passager landed"
+				},
+				{
+					"field_name": "arrival_date",
+					"field_description": "arrival date of the passanger"
+				},
+				{
+					"field_name": "entry_mode",
+					"field_description": "travelled mode of the passanger"
+				},
+				{
+					"field_name": "arrival_state",
+					"field_description": "The passager travelled to"
+				},
+				{
+					"field_name": "age",
+					"field_description": "age of the passager"
+				},
+				{
+					"field_name": "visa_code",
+					"field_description": "Category of the visa"
+				},
+				{
+					"field_name": "visa_post",
+					"field_description": "code of the place where visa was issued"
+				},
+				{
+					"field_name": "occupation",
+					"field_description": "passager occupation"
+				},
+				{
+					"field_name": "arrival_flag",
+					"field_description": "admitted or paroled into the U.S"
+				},
+				{
+					"field_name": "departure_flag",
+					"field_description": " Departed, lost I-94 or is deceased"
+				},
+				{
+					"field_name": "update_flag",
+					"field_description": "Either apprehended, overstayed, adjusted to perm residence"
+				},
+				{
+					"field_name": "match_flag",
+					"field_description": "Match of arrival and departure records"
+				},
+				{
+					"field_name": "visa_expire_date",
+					"field_description": "visa end date"
+				},
+				{
+					"field_name": "gender",
+					"field_description": "gender"
+				},
+				{
+					"field_name": "airline",
+					"field_description": "pasanger travelled airline"
+				},
+				{
+					"field_name": "flight_number",
+					"field_description": "flight number"
+				},
+				{
+					"field_name": "visa_type",
+					"field_description": "type of the visa passager travelled"
+				}
+			]
+		}
+	]
+}
